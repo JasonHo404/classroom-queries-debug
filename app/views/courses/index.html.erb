@@ -6,7 +6,7 @@
 
 <form action="/insert_course" method="post">
   <div>
-    <label for="title_box">
+    <label for="title_b">
       Title
     </label>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <label for="">
+    <label for="department">
       Department
     </label>
 
@@ -79,12 +79,12 @@
       </td>
 
       <td>
-        <% department = department.where({ :id => course.department_id }).at(0) %>
+        <% department = Department.where({ :id => course.department_id }).at(0) %>
         <a href="/departments/<%= department.id %>"><%= department.name %></a>
       </td>
 
       <td>
-        <a href="/courses/<%= @course.id %>">
+        <a href="/courses/<%= course.id %>">
           Show details
         </a>
       </td>
